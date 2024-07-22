@@ -1,6 +1,7 @@
 import express from 'express';
+import 'dotenv/config';
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 7000;
 // Route
 app.get("/", (req, res) => {
     return res.send("Hello From Server!");
