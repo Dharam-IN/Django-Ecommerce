@@ -13,6 +13,5 @@ const todoSchema = `#graphql
         todos: [Todo]
     }
 
-`
-
+`;
 export default todoSchema;
