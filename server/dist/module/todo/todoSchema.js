@@ -2,6 +2,10 @@ const todoSchema = `#graphql
 
     scalar Date
 
+    type ResponseType{
+        message: String
+    }
+
     type Todo{
         id: Int!
         title: String
@@ -10,7 +14,15 @@ const todoSchema = `#graphql
     }
 
     type Query{
-        todos: [Todo]
+        todos: [Todo],
+        getTodo(id: Int): Todo
+    }
+
+    type Mutation{
+        createTodo(title: String): Todo,
+        updateTodo(id: Int, title: String): ResponseType,
+        completedUpdate(id: Int, completed: Boolean): ResponseType,
+        deleteTodo(id: Int): ResponseType
     }
 
 `;
